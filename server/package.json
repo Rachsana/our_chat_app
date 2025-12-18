@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "cd ../client && npm install && npm run build"
+    "build": "cd ../client && npm ci && npx --yes react-scripts build"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -21,6 +21,7 @@
     "nodemon": "^3.0.1"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   }
 }
