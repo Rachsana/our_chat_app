@@ -4,22 +4,11 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Chat from './pages/Chat';
 import './App.css';
-import axios from 'axios'; 
-
-const API_URL = process.env.REACT_APP_API_URL || '/api';
-
-const api = axios.create({
-  baseURL: API_URL,
-  headers: {
-    'Content-Type': 'application/json'
-  }
-});
 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem('token');
   return token ? children : <Navigate to="/login" />;
 };
-
 
 const PublicRoute = ({ children }) => {
   const token = localStorage.getItem('token');
